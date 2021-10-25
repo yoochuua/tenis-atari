@@ -109,6 +109,7 @@ void OpenGLWindow::paintGL() {
 
   abcg::glClear(GL_COLOR_BUFFER_BIT);
   abcg::glViewport(0, 0, m_viewportWidth, m_viewportHeight);
+  
 
   m_ship.paintGL(m_gameData);
   m_adv.paintGL(m_gameData);
@@ -117,9 +118,11 @@ void OpenGLWindow::paintUI() {
   abcg::OpenGLWindow::paintUI();
 
   {
-    const auto size{ImVec2(300, 85)};
-    const auto position{ImVec2((m_viewportWidth - size.x) / 2.0f,
-                               (m_viewportHeight - size.y) / 2.0f)};
+
+    if (m_gameData.m_state == State::Playing) {
+      const auto size{ImVec2(300, 85)};
+    const auto position{ImVec2((m_viewportHeight - size.x) / 2.0f, 0.8f)};//(m_viewportWidth - size.x) / 2.0f,
+                               //(m_viewportHeight - size.y) / 2.0f)};
     ImGui::SetNextWindowPos(position);
     ImGui::SetNextWindowSize(size);
     ImGuiWindowFlags flags{ImGuiWindowFlags_NoBackground |
@@ -127,12 +130,23 @@ void OpenGLWindow::paintUI() {
                            ImGuiWindowFlags_NoInputs};
     ImGui::Begin(" ", nullptr, flags);
     ImGui::PushFont(m_font);
-
-    if (m_gameData.m_state == State::GameOver) {
+      ImGui::Text("0:0");
+    }
+    else if (m_gameData.m_state == State::GameOver) {
+       const auto size{ImVec2(300, 85)};
+    const auto position{ImVec2((m_viewportWidth - size.x) / 2.0f,(m_viewportHeight - size.y) / 2.0f)};
+    ImGui::SetNextWindowPos(position);
+    ImGui::SetNextWindowSize(size);
+    ImGuiWindowFlags flags{ImGuiWindowFlags_NoBackground |
+                           ImGuiWindowFlags_NoTitleBar |
+                           ImGuiWindowFlags_NoInputs};
+    ImGui::Begin(" ", nullptr, flags);
+    ImGui::PushFont(m_font);
       ImGui::Text("Game Over!");
     } /*else if (m_gameData.m_state == State::Win) {
       ImGui::Text("*You Win!*");
     }*/
+    
 
     ImGui::PopFont();
     ImGui::End();
