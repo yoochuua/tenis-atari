@@ -3,12 +3,12 @@
 
 #include <bitset>
 
-enum class Input {Up, Down, Fire};
-enum class State { Playing, GameOver};
+enum class Input {Up, Down, Fire, Up2, Down2, Fire2};
+enum class State { Menu,Playing, GameOver};
 
 struct GameData {
   State m_state{State::Playing};
-  std::bitset<3> m_input;  // [Up, Down, Fire]
+  std::bitset<6> m_input;  // [Up, Down, Fire]
 };
 
 #endif

@@ -4,57 +4,46 @@
 
 #include "abcg.hpp"
 
-//Variável para as bolinhas cairem
-bool isPlayer = false;
+bool isPlayer = true; //Verifica se terá um segundo player
+int player1 = 0;
+int player2 = 0;
 void OpenGLWindow::handleEvent(SDL_Event &event) {
   // Keyboard events
+  
   if (event.type == SDL_KEYDOWN) {
     if (event.key.keysym.sym == SDLK_SPACE)
       m_gameData.m_input.set(static_cast<size_t>(Input::Fire));
-    if (event.key.keysym.sym == SDLK_UP || event.key.keysym.sym == SDLK_w)
+    if (event.key.keysym.sym == SDLK_UP)
       m_gameData.m_input.set(static_cast<size_t>(Input::Up));
-    if (event.key.keysym.sym == SDLK_DOWN || event.key.keysym.sym == SDLK_s)
+    if (event.key.keysym.sym == SDLK_DOWN)
       m_gameData.m_input.set(static_cast<size_t>(Input::Down));
-    /*if (event.key.keysym.sym == SDLK_LEFT || event.key.keysym.sym == SDLK_a)
-      m_gameData.m_input.set(static_cast<size_t>(Input::Left));
-    if (event.key.keysym.sym == SDLK_RIGHT || event.key.keysym.sym == SDLK_d)
-      m_gameData.m_input.set(static_cast<size_t>(Input::Right));*/
+    if(isPlayer){
+      if (event.key.keysym.sym == SDLK_q)
+        m_gameData.m_input.set(static_cast<size_t>(Input::Fire2));
+      if (event.key.keysym.sym == SDLK_w)
+        m_gameData.m_input.set(static_cast<size_t>(Input::Up2));
+      if (event.key.keysym.sym == SDLK_s)
+        m_gameData.m_input.set(static_cast<size_t>(Input::Down2));
+    }
   }
   if (event.type == SDL_KEYUP) {
     if (event.key.keysym.sym == SDLK_SPACE)
       m_gameData.m_input.reset(static_cast<size_t>(Input::Fire));
-    if (event.key.keysym.sym == SDLK_UP || event.key.keysym.sym == SDLK_w)
+    if (event.key.keysym.sym == SDLK_UP)
       m_gameData.m_input.reset(static_cast<size_t>(Input::Up));
-    if (event.key.keysym.sym == SDLK_DOWN || event.key.keysym.sym == SDLK_s)
+    if (event.key.keysym.sym == SDLK_DOWN)
       m_gameData.m_input.reset(static_cast<size_t>(Input::Down));
-    /*if (event.key.keysym.sym == SDLK_LEFT || event.key.keysym.sym == SDLK_a)
-      m_gameData.m_input.reset(static_cast<size_t>(Input::Left));
-    if (event.key.keysym.sym == SDLK_RIGHT || event.key.keysym.sym == SDLK_d)
-      m_gameData.m_input.reset(static_cast<size_t>(Input::Right));*/
+    if(isPlayer){
+      if (event.key.keysym.sym == SDLK_q)
+        m_gameData.m_input.reset(static_cast<size_t>(Input::Fire2));
+      if (event.key.keysym.sym == SDLK_w)
+        m_gameData.m_input.reset(static_cast<size_t>(Input::Up2));
+      if (event.key.keysym.sym == SDLK_s)
+        m_gameData.m_input.reset(static_cast<size_t>(Input::Down2));
+    }
   }
-
-  // Mouse events
-  /*if (event.type == SDL_MOUSEBUTTONDOWN) {
-    if (event.button.button == SDL_BUTTON_LEFT)
-      m_gameData.m_input.set(static_cast<size_t>(Input::Fire));
-    if (event.button.button == SDL_BUTTON_RIGHT)
-      m_gameData.m_input.set(static_cast<size_t>(Input::Up));
-  }
-  if (event.type == SDL_MOUSEBUTTONUP) {
-    if (event.button.button == SDL_BUTTON_LEFT)
-      m_gameData.m_input.reset(static_cast<size_t>(Input::Fire));
-    if (event.button.button == SDL_BUTTON_RIGHT)
-      m_gameData.m_input.reset(static_cast<size_t>(Input::Up));
-  }
-  if (event.type == SDL_MOUSEMOTION) {
-    glm::ivec2 mousePosition;
-    SDL_GetMouseState(&mousePosition.x, &mousePosition.y);
-
-    glm::vec2 direction{glm::vec2{mousePosition.x - m_viewportWidth / 2,
-                                  mousePosition.y - m_viewportHeight / 2}};
-    direction.y = -direction.y;
-    m_ship.setRotation(std::atan2(direction.y, direction.x) - M_PI_2);
-  }*/
+  
+  
 }
 void OpenGLWindow::initializeGL() {
   // Load a new font
@@ -83,24 +72,29 @@ m_starsProgram = createProgramFromFile(getAssetsPath() + "stars.vert",
                                        getAssetsPath() + "stars.frag");
   restart();
 }
+
 void OpenGLWindow::restart() {
-  m_gameData.m_state = State::Playing;
+  m_gameData.m_state = State::Menu;
+  //m_gameData.m_state = State::GameOver;
+  //m_gameData.m_state = State::Playing;
   m_ship.initializeGL(m_objectsProgram);
   m_adv.initializeGL(m_objectsProgram);
 }
 
 void OpenGLWindow::update() {
   // Wait 5 seconds before restarting
-  if (m_gameData.m_state != State::Playing &&
+  /*if (m_gameData.m_state != State::Playing &&
       m_restartWaitTimer.elapsed() > 5) {
     restart();
     return;
-  }
-  m_ship.update(m_gameData, isPlayer);
-  m_adv.update(m_gameData, m_ship.m_translation.y);
-  /*if (m_gameData.m_state == State::Playing) {
-      checkCollisions();
-    }*/
+  }*/
+  
+  if (m_gameData.m_state == State::Playing) {
+      m_ship.update(m_gameData);
+      m_adv.update(m_gameData, m_ship.m_translation.y, isPlayer); //mudar depois para seguir a bola
+      placar(m_ship.m_translation.y); //mudar depois para o x da bola marcar o ponto
+      //checkCollisions();
+    }
   
 
 }
@@ -130,7 +124,7 @@ void OpenGLWindow::paintUI() {
                            ImGuiWindowFlags_NoInputs};
     ImGui::Begin(" ", nullptr, flags);
     ImGui::PushFont(m_font);
-      ImGui::Text("0:0");
+      ImGui::Text("%d:%d", player1, player2);
     }
     else if (m_gameData.m_state == State::GameOver) {
        const auto size{ImVec2(300, 85)};
@@ -143,12 +137,24 @@ void OpenGLWindow::paintUI() {
     ImGui::Begin(" ", nullptr, flags);
     ImGui::PushFont(m_font);
       ImGui::Text("Game Over!");
-    } /*else if (m_gameData.m_state == State::Win) {
-      ImGui::Text("*You Win!*");
-    }*/
-    
-
+    }
+    else if (m_gameData.m_state == State::Menu) {
+      const auto size{ImVec2(300, 85)};
+      const auto position{ImVec2((m_viewportWidth - size.x) / 2.0f,(m_viewportHeight - size.y) / 2.0f)};
+      ImGui::SetNextWindowPos(position);
+      ImGui::Begin(" ", nullptr, ImGuiWindowFlags_NoDecoration);
+      ImGui::PushFont(m_font);
+      if (ImGui::Button("One Player", ImVec2(300, 80))) {
+        isPlayer = false;
+        m_gameData.m_state = State::Playing;
+      }
+      if (ImGui::Button("Two Player", ImVec2(300, 80))) {
+        isPlayer = true;
+        m_gameData.m_state = State::Playing;
+      }
+    }
     ImGui::PopFont();
+    
     ImGui::End();
   }
 }
@@ -157,6 +163,14 @@ void OpenGLWindow::resizeGL(int width, int height) {
   m_viewportHeight = height;
 
   abcg::glClear(GL_COLOR_BUFFER_BIT);
+}
+void OpenGLWindow::placar(float ball_x){
+  if(ball_x >= 0.6){
+    player1++;
+  }
+  else if(ball_x <= -0.6){
+    player2++;
+  }
 }
 
 void OpenGLWindow::terminateGL() {

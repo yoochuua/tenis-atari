@@ -32,13 +32,23 @@ void Adv::terminateGL() {
   abcg::glDeleteBuffers(1, &m_ebo);
   abcg::glDeleteVertexArrays(1, &m_vao);
 }
-void Adv::update(const GameData &gameData, float ball_y) {
-  if (m_translation.y > ball_y && m_translation.y > -0.87f){
-    m_translation.y += -0.001f;
+void Adv::update(const GameData &gameData, float ball_y, bool isPlayer) {
+  if(!isPlayer){
+    if (m_translation.y > ball_y && m_translation.y > -0.87f){
+      m_translation.y += -0.001f;
     }
-  if (m_translation.y < ball_y && m_translation.y < 0.87f){
-    m_translation.y += 0.001f;
+    if (m_translation.y < ball_y && m_translation.y < 0.87f){
+      m_translation.y += 0.001f;
     }
+  }
+  else{
+    if (gameData.m_input[static_cast<size_t>(Input::Down2)] && m_translation.y > -0.87f){
+      m_translation.y += -0.001f;
+    }
+    if (gameData.m_input[static_cast<size_t>(Input::Up2)] && m_translation.y < 0.87f){
+      m_translation.y += 0.001f;
+    }
+  }
 }
 void Adv::createMelon(GLuint program){
   m_program = program;

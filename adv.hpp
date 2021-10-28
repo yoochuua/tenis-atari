@@ -16,7 +16,7 @@ class Adv {
   void terminateGL();
   void createMelon(GLuint program);
 
-  void update(const GameData &gameData, float ball_y);
+  void update(const GameData &gameData, float ball_y, bool isPlayer);
   void setRotation(float rotation) { m_rotation = rotation; }
 
  private:

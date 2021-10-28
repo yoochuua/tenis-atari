@@ -32,7 +32,7 @@ void Ship::terminateGL() {
   abcg::glDeleteBuffers(1, &m_ebo);
   abcg::glDeleteVertexArrays(1, &m_vao);
 }
-void Ship::update(const GameData &gameData, bool isPlayer) {
+void Ship::update(const GameData &gameData) {
   if (gameData.m_input[static_cast<size_t>(Input::Down)] && m_translation.y > -0.87f){
     m_translation.y += -0.001f;
     }

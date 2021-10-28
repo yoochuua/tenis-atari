@@ -38,6 +38,7 @@ class OpenGLWindow : public abcg::OpenGLWindow {
 
   void restart();
   void update();
+  void placar(float ball_x);
   //void checkCollisions();
   //void checkWinCondition();
 };

@@ -16,7 +16,7 @@ class Ship {
   void terminateGL();
   void createMelon(GLuint program);
 
-  void update(const GameData &gameData, bool isPlayer);
+  void update(const GameData &gameData);
   void setRotation(float rotation) { m_rotation = rotation; }
 
  private:
