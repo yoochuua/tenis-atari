@@ -4,7 +4,7 @@
 #include <bitset>
 
 enum class Input { Up1, Down1, Up2, Down2, Space };
-enum class State { Playing, GameOver, Start, Win };
+enum class State { Playing, GameOver, Start, Win }; // Terminar de programar esses estados
 
 struct GameData {
   State m_state{State::Start};
