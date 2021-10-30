@@ -1,7 +1,5 @@
 #include "openglwindow.hpp"
-
 #include <imgui.h>
-
 #include "abcg.hpp"
 
 // Variável para as bolinhas cairem
