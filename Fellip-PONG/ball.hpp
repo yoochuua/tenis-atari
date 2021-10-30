@@ -2,7 +2,6 @@
 #define BALL_HPP_
 
 #include <list>
-
 #include "abcg.hpp"
 #include "gamedata.hpp"
 
