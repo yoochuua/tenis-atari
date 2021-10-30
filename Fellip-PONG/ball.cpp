@@ -1,4 +1,5 @@
 #include "ball.hpp"
+
 #include <cppitertools/itertools.hpp>
 #include "openglwindow.hpp"
 
