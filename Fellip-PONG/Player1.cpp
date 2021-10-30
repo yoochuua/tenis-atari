@@ -26,11 +26,13 @@ void Player1::paintGL(const GameData &gameData) {
 
   abcg::glUseProgram(0);
 }
+
 void Player1::terminateGL() {
   abcg::glDeleteBuffers(1, &m_vbo);
   abcg::glDeleteBuffers(1, &m_ebo);
   abcg::glDeleteVertexArrays(1, &m_vao);
 }
+
 void Player1::update(const GameData &gameData, bool isPlayer) {
   if (gameData.m_input[static_cast<size_t>(Input::Down1)] &&
       m_translation.y > -0.87f) {
@@ -41,6 +43,7 @@ void Player1::update(const GameData &gameData, bool isPlayer) {
     m_translation.y += 0.001f;
   }
 }
+
 void Player1::createPlayer1(GLuint program) {
   m_program = program;
   m_colorLoc = abcg::glGetUniformLocation(m_program, "color");
