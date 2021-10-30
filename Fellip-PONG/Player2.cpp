@@ -41,6 +41,7 @@ void Player2::update(const GameData &gameData, bool isPlayer) {
     m_translation.y += 0.001f;
   }
 }
+
 void Player2::createPlayer2(GLuint program) {
   m_program = program;
   m_colorLoc = abcg::glGetUniformLocation(m_program, "color");
