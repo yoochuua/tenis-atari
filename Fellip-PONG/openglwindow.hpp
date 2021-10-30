@@ -2,9 +2,7 @@
 #define OPENGLWINDOW_HPP_
 
 #include <imgui.h>
-
 #include <random>
-
 #include "Player1.hpp"
 #include "Player2.hpp"
 #include "abcg.hpp"
