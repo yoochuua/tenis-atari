@@ -4,10 +4,7 @@
 #include "abcg.hpp"
 #include "gamedata.hpp"
 
-// class Asteroids;
-// class Bullets;
 class OpenGLWindow;
-// class StarLayers;
 
 class Player1 {
  public:
