@@ -1,0 +1,26 @@
+# ninja log v5
+9	285	6573977499064200	abcg/CMakeFiles/abcg.dir/abcg_exception.cpp.obj	7bd5df40173e192f
+14	329	6573977499973651	abcg/CMakeFiles/abcg.dir/abcg_openglwindow.cpp.obj	15de740e2af2c4f7
+11	357	6573977499513926	abcg/CMakeFiles/abcg.dir/abcg_openglfunctions.cpp.obj	bffe6b941322f233
+17	362	6573977500463338	abcg/CMakeFiles/abcg.dir/abcg_image.cpp.obj	1aeeac9240f123f5
+2	379	6573977499833726	abcg/CMakeFiles/abcg.dir/abcg_elapsedtimer.cpp.obj	60b1af621747af3f
+6	399	6573977499883704	abcg/CMakeFiles/abcg.dir/abcg_application.cpp.obj	5b8a92fa9c1f7c73
+357	593	6573977502332197	abcg/external/imgui/CMakeFiles/imgui.dir/imgui.cpp.obj	a71c14ec6e6c38fe
+333	613	6573977502392159	abcg/CMakeFiles/abcg.dir/abcg_trackball.cpp.obj	3dea2ca3103e8ffc
+325	637	6573977502152309	abcg/CMakeFiles/abcg.dir/abcg_string.cpp.obj	fb4520de76adf27c
+637	935	6573977505790067	abcg/external/imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.obj	c6e2c5941fc53353
+935	1084	6573977507389090	abcg/external/imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.obj	b0dc376e2005a4fa
+1085	1369	6573977509817592	abcg/external/imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.obj	fa9ada59956e43e5
+1369	1661	6573977513135553	abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_sdl.cpp.obj	30027a3bf485967
+1662	1842	6573977515384176	abcg/external/imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.obj	8c815ecf070c4848
+1843	2164	6573977516883244	abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.obj	7035c86c3127b10d
+363	2408	6573977518482264	examples/PONG/CMakeFiles/PONG.dir/Player1.cpp.obj	9c2a151a885d997e
+399	2503	6573977519171843	examples/PONG/CMakeFiles/PONG.dir/main.cpp.obj	680477d7b2da1d9
+2411	2754	6573977523026985	abcg/external/fmt/CMakeFiles/fmt.dir/format.cc.obj	43b81636cacd768d
+633	3166	6573977528313729	examples/PONG/CMakeFiles/PONG.dir/ball.cpp.obj	71352850312921c0
+594	3234	6573977528303736	examples/PONG/CMakeFiles/PONG.dir/Player2.cpp.obj	420e0a9614b72861
+2164	3275	6573977529892757	abcg/external/imgui/libimgui.a	ee7a7e660ba85cdc
+2759	3792	6573977535079565	abcg/external/fmt/libfmt.a	cd7551c0ac70d18d
+3792	4468	6573977541845404	abcg/libabcg.a	c0a39b7b70085154
+379	6158	6573977557842354	examples/PONG/CMakeFiles/PONG.dir/openglwindow.cpp.obj	c23e12333312941
+6158	23313	0	bin/PONG.exe	82caf77c74fb9ca1

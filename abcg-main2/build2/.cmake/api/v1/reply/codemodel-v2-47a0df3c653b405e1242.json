@@ -1,0 +1,288 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						8
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "abcg",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-abcg-Debug-756b9819723ab49d824d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "abcg",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "abcg/external",
+					"childIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"jsonFile" : "directory-abcg.external-Debug-3cbbbaa21b45aae7bf9b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "abcg/external"
+				},
+				{
+					"build" : "abcg/external/imgui",
+					"jsonFile" : "directory-abcg.external.imgui-Debug-bcb73867350415b838da.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "abcg/external/imgui",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "abcg/external/cppitertools",
+					"jsonFile" : "directory-abcg.external.cppitertools-Debug-ee45f3e303f88940a3f1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "abcg/external/cppitertools"
+				},
+				{
+					"build" : "abcg/external/fmt",
+					"jsonFile" : "directory-abcg.external.fmt-Debug-2b65811e20d0305907a4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 4,
+					"source" : "abcg/external/fmt",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "abcg/external/glm",
+					"jsonFile" : "directory-abcg.external.glm-Debug-ec733e0d8e26cb053c7a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "abcg/external/glm"
+				},
+				{
+					"build" : "abcg/external/gsl",
+					"jsonFile" : "directory-abcg.external.gsl-Debug-9cb1d5765842b28108f4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 5,
+					"source" : "abcg/external/gsl"
+				},
+				{
+					"build" : "examples",
+					"childIndexes" : 
+					[
+						9
+					],
+					"jsonFile" : "directory-examples-Debug-2e8964349ffea94e1580.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "examples"
+				},
+				{
+					"build" : "examples/PONG",
+					"jsonFile" : "directory-examples.PONG-Debug-f51d4fc3847f7dffb009.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 6,
+					"source" : "examples/PONG",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						6
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						8
+					],
+					"name" : "abcg",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						2,
+						6
+					],
+					"name" : "external",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "imgui",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "cppitertools",
+					"parentIndex" : 1
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "fmt",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "gsl",
+					"parentIndex" : 1
+				},
+				{
+					"directoryIndexes" : 
+					[
+						9
+					],
+					"name" : "PONG",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 9,
+					"id" : "PONG::@f544aaacf028974dae99",
+					"jsonFile" : "target-PONG-Debug-92ab6099d3071eee0216.json",
+					"name" : "PONG",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "abcg::@fa5a221ce82f0a06330e",
+					"jsonFile" : "target-abcg-Debug-d4137df161a915f3c7de.json",
+					"name" : "abcg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "fmt::@05cd5962bb4e2bff130e",
+					"jsonFile" : "target-fmt-Debug-ba97c264c89d35af5859.json",
+					"name" : "fmt",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "imgui::@a1283253420173d9f2e2",
+					"jsonFile" : "target-imgui-Debug-7f34ea388950ff9ce9c5.json",
+					"name" : "imgui",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/ComputacaoGrafica/Fellip/abcg/build",
+		"source" : "C:/ComputacaoGrafica/Fellip/abcg"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
